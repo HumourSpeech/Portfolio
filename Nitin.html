@@ -1,0 +1,998 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Nitin Mishra — AI & Machine Learning Engineer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Portfolio of Nitin Mishra — AI/ML, NLP, Generative AI, Data Science." />
+  <link rel="icon" href="./images/favicon.png" />
+  <style>
+    :root{
+      --bg1:#030617;
+      --bg2:#050816;
+      --accent-1:#14f4ff;
+      --accent-2:#a855ff;
+      --accent-3:#f97316;
+      --muted:#cbd5f5;
+      --glass:rgba(15,23,42,0.9);
+      --border:rgba(148,163,184,0.35);
+      --heading:'Jost',system-ui,-apple-system,sans-serif;
+      --body:'Hk Grotesk',system-ui,-apple-system,sans-serif;
+      --max-w:1180px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      min-height:100vh;
+      font-family:var(--body);
+      color:#e5edff;
+      background:
+        radial-gradient(1200px 900px at 10% 0%,rgba(20,244,255,0.25),transparent),
+        radial-gradient(1400px 900px at 90% 100%,rgba(168,85,255,0.25),transparent),
+        linear-gradient(145deg,#020617,#020617 40%,#050816);
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+    }
+    .container{max-width:var(--max-w);margin:0 auto;padding:2.5rem 1.75rem 4rem;position:relative;z-index:2}
+
+    /* ---------------- HEADER ---------------- */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1.5rem;
+      padding-bottom:1rem;
+    }
+    .brand{display:flex;align-items:center;gap:1rem}
+    .logo-orbit{
+      width:56px;height:56px;border-radius:50%;
+      position:relative;
+      background:radial-gradient(circle at 30% 20%,#ffffff,transparent 55%),#020617;
+      box-shadow:0 0 0 1px rgba(148,163,184,0.3),0 20px 40px rgba(0,0,0,0.7);
+      overflow:hidden;
+    }
+    .logo-orbit::before,
+    .logo-orbit::after{
+      content:"";
+      position:absolute;
+      border-radius:999px;
+      border:1px solid rgba(56,189,248,0.7);
+      width:120%;height:120%;
+      left:-10%;top:-10%;
+      animation:orbit 8s linear infinite;
+    }
+    .logo-orbit::after{
+      border-color:rgba(168,85,255,0.8);
+      transform:rotate(40deg);
+      animation-duration:11s;
+    }
+    .logo-text{
+      position:absolute;inset:0;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;font-size:1.1rem;letter-spacing:0.03em;
+      background:linear-gradient(135deg,#bef264,#22d3ee);
+      -webkit-background-clip:text;background-clip:text;
+      color:transparent;
+    }
+    @keyframes orbit{
+      0%{transform:rotate(0deg)}
+      100%{transform:rotate(360deg)}
+    }
+
+    .brand-main-title{font-family:var(--heading);font-weight:600;font-size:1.3rem}
+    .brand-sub{font-size:.9rem;color:var(--muted)}
+
+    nav ul{list-style:none;display:flex;gap:1.25rem}
+    nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-size:.9rem;
+      padding:.45rem .9rem;
+      border-radius:999px;
+      border:1px solid transparent;
+      transition:all .18s;
+    }
+    nav a:hover{
+      color:#f9fafb;
+      border-color:rgba(148,163,184,0.5);
+      background:radial-gradient(circle at 0 0,rgba(20,244,255,0.24),transparent 60%);
+      box-shadow:0 12px 30px rgba(15,23,42,0.8);
+    }
+
+    .socials{display:flex;gap:.55rem;align-items:center}
+    .chip{
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.5);
+      padding:.4rem .8rem;
+      font-size:.8rem;
+      color:var(--muted);
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:.3rem;
+      background:radial-gradient(circle at 0 0,rgba(20,244,255,0.2),transparent 50%);
+      transition:all .15s;
+    }
+    .chip span{font-size:.75rem;opacity:.9}
+    .chip:hover{
+      border-color:#22d3ee;
+      color:#e5edff;
+      transform:translateY(-1px);
+      box-shadow:0 10px 26px rgba(15,23,42,0.9);
+    }
+
+    /* ---------------- HERO ---------------- */
+    .hero{
+      display:grid;
+      grid-template-columns: minmax(0,2.1fr) minmax(0,1.4fr);
+      gap:2.75rem;
+      padding:2.5rem 0 3.5rem;
+      align-items:center;
+    }
+    .eyebrow{
+      font-size:.85rem;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      color:var(--muted);
+      margin-bottom:.6rem;
+    }
+    h1{
+      font-family:var(--heading);
+      font-size:2.9rem;
+      line-height:1.07;
+      margin-bottom:.4rem;
+    }
+    .gradient-name{
+      background:linear-gradient(120deg,#22d3ee,#a855ff,#facc15);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .hero-tagline{
+      font-size:1.1rem;
+      color:var(--muted);
+      margin-bottom:1rem;
+    }
+    .typing-role{
+      color:var(--accent-1);
+      font-weight:600;
+      display:inline-block;
+    }
+    .caret{
+      display:inline-block;width:0.9ch;height:1.1em;
+      background:var(--accent-2);
+      margin-left:3px;
+      animation:blink 1s steps(1) infinite;
+      vertical-align:-0.1em;
+    }
+    @keyframes blink{50%{opacity:0}}
+
+    .hero-body{
+      font-size:.98rem;
+      color:var(--muted);
+      line-height:1.7;
+      max-width:38rem;
+    }
+
+    .hero-badges{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.1rem}
+    .badge{
+      padding:.35rem .8rem;
+      border-radius:999px;
+      font-size:.8rem;
+      border:1px solid rgba(148,163,184,0.4);
+      background:radial-gradient(circle at 0 0,rgba(56,189,248,0.22),transparent 55%);
+      color:var(--muted);
+    }
+
+    .hero-cta{display:flex;gap:.8rem;margin-top:1.4rem;flex-wrap:wrap}
+    .btn-primary{
+      border-radius:999px;
+      padding:.65rem 1.35rem;
+      border:none;
+      outline:none;
+      cursor:pointer;
+      font-size:.9rem;
+      font-weight:600;
+      text-decoration:none;
+      color:#020617;
+      background:linear-gradient(135deg,#22d3ee,#a855ff);
+      box-shadow:0 16px 38px rgba(15,23,42,0.95);
+      display:inline-flex;align-items:center;gap:.5rem;
+      transition:transform .16s,box-shadow .16s,filter .16s;
+    }
+    .btn-primary:hover{
+      transform:translateY(-1px);
+      filter:brightness(1.05);
+      box-shadow:0 22px 48px rgba(15,23,42,1);
+    }
+    .btn-ghost{
+      border-radius:999px;
+      padding:.6rem 1.25rem;
+      border:1px solid rgba(148,163,184,0.7);
+      background:rgba(15,23,42,0.7);
+      color:var(--muted);
+      font-size:.9rem;
+      text-decoration:none;
+      display:inline-flex;align-items:center;gap:.5rem;
+      transition:all .16s;
+    }
+    .btn-ghost:hover{
+      border-color:#22d3ee;
+      color:#e5edff;
+      box-shadow:0 12px 30px rgba(15,23,42,0.9);
+      transform:translateY(-1px);
+    }
+
+    /* hero right: photo panel */
+    .hero-panel{
+      border-radius:20px;
+      background:radial-gradient(circle at 0 0,rgba(56,189,248,0.18),transparent 60%),
+                 radial-gradient(circle at 100% 100%,rgba(236,72,153,0.26),transparent 60%),
+                 rgba(15,23,42,0.9);
+      border:1px solid rgba(148,163,184,0.4);
+      padding:1.4rem 1.35rem 1.6rem;
+      box-shadow:0 22px 60px rgba(15,23,42,1);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-panel::before{
+      content:"";
+      position:absolute;
+      width:180%;
+      height:180%;
+      top:-40%;
+      left:-40%;
+      background:conic-gradient(from 160deg,rgba(56,189,248,0.18),rgba(168,85,255,0.14),rgba(248,113,113,0.16),rgba(56,189,248,0.18));
+      opacity:0.25;
+      filter:blur(40px);
+      animation:spinGlow 28s linear infinite;
+      pointer-events:none;
+    }
+    @keyframes spinGlow{
+      0%{transform:rotate(0deg)}
+      100%{transform:rotate(360deg)}
+    }
+    .hero-panel-inner{position:relative;z-index:2}
+
+    .orbiting-dot{
+      position:absolute;
+      width:7px;height:7px;border-radius:50%;
+      background:#22d3ee;
+      box-shadow:0 0 12px rgba(34,211,238,0.9);
+      top:14%;right:10%;
+      animation:dotPulse 2.4s ease-in-out infinite;
+    }
+    @keyframes dotPulse{
+      0%,100%{transform:scale(0.6);opacity:.6}
+      50%{transform:scale(1.3);opacity:1}
+    }
+
+    /* photo inside hero panel */
+    .hero-photo{
+      width:100%;
+      height:260px;
+      border-radius:16px;
+      object-fit:cover;
+      object-position:top center;
+      margin-bottom:0.8rem;
+      box-shadow:0 18px 40px rgba(15,23,42,0.95);
+    }
+
+    /* ---------------- SECTIONS ---------------- */
+    section{margin:2.75rem 0}
+    .section-head{
+      margin-bottom:1.1rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap:1rem;
+    }
+    .section-head h2{
+      font-family:var(--heading);
+      font-size:2.1rem;
+    }
+    .section-kicker{
+      font-size:.85rem;
+      color:var(--muted);
+      opacity:.9;
+    }
+    .glass{
+      border-radius:18px;
+      background:rgba(15,23,42,0.9);
+      border:1px solid rgba(148,163,184,0.45);
+      padding:1.4rem 1.4rem 1.6rem;
+      box-shadow:0 18px 50px rgba(15,23,42,1);
+    }
+
+    /* ---------------- PROJECTS ---------------- */
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:1.15rem;
+    }
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .projects-grid{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start}
+      .socials{align-self:flex-start}
+    }
+    .project{
+      display:flex;
+      gap:1rem;
+      align-items:stretch;
+      padding:1rem;
+      border-radius:14px;
+      border:1px solid rgba(148,163,184,0.4);
+      background:radial-gradient(circle at 0% 0%,rgba(34,211,238,0.16),transparent 70%),
+                 radial-gradient(circle at 100% 100%,rgba(236,72,153,0.18),transparent 60%),
+                 rgba(15,23,42,0.9);
+      box-shadow:0 16px 40px rgba(2,6,23,0.85);
+      position:relative;
+      overflow:hidden;
+      transition:transform .18s, box-shadow .18s, border-color .18s;
+    }
+    .project:hover{
+      transform:translateY(-6px);
+      box-shadow:0 24px 60px rgba(2,6,23,1);
+      border-color:#22d3ee;
+    }
+    .project-left{flex:1;position:relative;z-index:2}
+    .project h3{font-size:1.15rem;margin-bottom:.25rem}
+    .project-meta{
+      font-size:.8rem;
+      color:var(--muted);
+      margin-bottom:.6rem;
+    }
+    .project p{
+      font-size:.9rem;
+      color:var(--muted);
+      line-height:1.6;
+      text-align:justify;
+    }
+    .project-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.65rem}
+    .pill{
+      font-size:.75rem;
+      padding:.25rem .65rem;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.6);
+      background:rgba(15,23,42,0.9);
+      color:var(--muted);
+    }
+    .project-link{
+      margin-top:.5rem;
+      font-size:.8rem;
+      text-decoration:none;
+      color:#7dd3fc;
+    }
+    .project-link:hover{text-decoration:underline}
+
+    .project-media{
+      width:150px;
+      border-radius:10px;
+      background:#020617;
+      position:relative;
+      overflow:hidden;
+      flex-shrink:0;
+    }
+
+    /* project 1: VAFA – waveform + mic */
+    .media-vafa{
+      background:radial-gradient(circle at 0 0,#22d3ee33,transparent 60%),#020617;
+    }
+    .vafa-wave{
+      position:absolute;
+      left:8%;right:8%;bottom:30%;
+      height:26px;
+      display:flex;
+      align-items:flex-end;
+      gap:3px;
+    }
+    .vafa-wave span{
+      flex:1;
+      border-radius:999px;
+      background:linear-gradient(180deg,#22d3ee,#a855ff);
+      animation:vafaBeat 1.4s ease-in-out infinite;
+      transform-origin:bottom;
+    }
+    .vafa-wave span:nth-child(2){animation-delay:.1s}
+    .vafa-wave span:nth-child(3){animation-delay:.2s}
+    .vafa-wave span:nth-child(4){animation-delay:.3s}
+    .vafa-wave span:nth-child(5){animation-delay:.4s}
+    @keyframes vafaBeat{
+      0%,100%{transform:scaleY(.4);opacity:.7}
+      40%{transform:scaleY(1);opacity:1}
+    }
+    .vafa-mic{
+      position:absolute;
+      top:20%;right:14%;
+      width:18px;height:26px;
+      border-radius:12px 12px 6px 6px;
+      border:2px solid rgba(148,163,184,0.8);
+      box-shadow:0 0 14px rgba(236,72,153,0.9);
+    }
+    .vafa-mic::after{
+      content:"";
+      position:absolute;
+      width:10px;height:8px;
+      border-radius:999px;
+      border-top:2px solid rgba(148,163,184,0.9);
+      border-left:2px solid transparent;
+      border-right:2px solid transparent;
+      bottom:-8px;left:50%;transform:translateX(-50%);
+    }
+
+    /* project 2: Network Security – grid & shield */
+    .media-net{
+      background:radial-gradient(circle at 100% 0,#a855ff33,transparent 60%),#020617;
+    }
+    .net-grid{
+      position:absolute;inset:12%;
+      border-radius:8px;
+      background:linear-gradient(135deg,rgba(148,163,184,0.33),rgba(15,23,42,0.9));
+      overflow:hidden;
+    }
+    .net-grid-lines::before,
+    .net-grid-lines::after{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background:repeating-linear-gradient(
+        90deg,
+        rgba(15,23,42,0),
+        rgba(15,23,42,0) 8px,
+        rgba(15,23,42,0.65) 9px
+      );
+      opacity:.9;
+    }
+    .net-grid-lines::after{
+      background:repeating-linear-gradient(
+        0deg,
+        rgba(15,23,42,0),
+        rgba(15,23,42,0) 8px,
+        rgba(15,23,42,0.65) 9px
+      );
+    }
+    .net-pulse{
+      position:absolute;
+      inset:18%;
+      border-radius:999px;
+      border:1px solid rgba(34,211,238,0.7);
+      animation:netPulse 2.8s ease-out infinite;
+    }
+    @keyframes netPulse{
+      0%{transform:scale(.5);opacity:0}
+      60%{transform:scale(1);opacity:1}
+      100%{transform:scale(1.3);opacity:0}
+    }
+    .net-shield{
+      position:absolute;
+      width:32px;height:38px;
+      border-radius:18px 18px 12px 12px;
+      border:2px solid rgba(34,211,238,0.9);
+      left:50%;top:50%;transform:translate(-50%,-50%);
+      box-shadow:0 0 18px rgba(34,211,238,0.8);
+    }
+    .net-shield::after{
+      content:"✓";
+      position:absolute;
+      inset:0;
+      display:flex;align-items:center;justify-content:center;
+      font-size:14px;
+      color:#bbf7d0;
+    }
+
+    /* project 3: ChurnDefender – risk meter */
+    .media-churn{
+      background:radial-gradient(circle at 50% 0,#22d3ee33,transparent 60%),
+                 radial-gradient(circle at 0 100%,#f9731633,transparent 60%),#020617;
+    }
+    .churn-meter-track{
+      position:absolute;left:14%;right:14%;bottom:24%;
+      height:12px;border-radius:999px;
+      background:rgba(15,23,42,0.9);
+      overflow:hidden;
+      border:1px solid rgba(148,163,184,0.6);
+    }
+    .churn-meter-fill{
+      height:100%;
+      width:70%;
+      border-radius:999px;
+      background:linear-gradient(90deg,#22c55e,#fbbf24,#f97316,#ef4444);
+      animation:meterAnim 3.4s ease-in-out infinite;
+      transform-origin:left;
+    }
+    @keyframes meterAnim{
+      0%{transform:scaleX(.4)}
+      50%{transform:scaleX(1)}
+      100%{transform:scaleX(.7)}
+    }
+    .churn-prob{
+      position:absolute;
+      top:20%;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:14px;
+      font-weight:600;
+    }
+    .churn-dot{
+      position:absolute;
+      width:14px;height:14px;border-radius:50%;
+      right:18%;bottom:45%;
+      background:radial-gradient(circle,#f97316,#7c2d12);
+      box-shadow:0 0 16px rgba(248,113,113,0.9);
+      animation:dotPulse 1.8s ease-in-out infinite;
+    }
+
+    /* ---------------- SKILLS ---------------- */
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:1rem;
+    }
+    @media(max-width:800px){
+      .skills-grid{grid-template-columns:minmax(0,1fr); }
+    }
+    .skill{
+      border-radius:12px;
+      border:1px solid rgba(148,163,184,0.5);
+      padding:1rem;
+      background:radial-gradient(circle at 0 0,rgba(56,189,248,0.16),transparent 60%),rgba(15,23,42,0.92);
+      font-size:.9rem;
+    }
+    .skill h3{font-size:1rem;margin-bottom:.45rem}
+    .skill-desc{color:var(--muted);margin-bottom:.55rem}
+    .meter{
+      height:9px;
+      border-radius:999px;
+      background:rgba(15,23,42,0.9);
+      overflow:hidden;
+    }
+    .meter-inner{
+      height:100%;
+      border-radius:999px;
+      background:linear-gradient(90deg,#22d3ee,#a855ff);
+      box-shadow:0 0 16px rgba(34,211,238,0.6);
+    }
+    .skill-tags{margin-top:.45rem;display:flex;flex-wrap:wrap;gap:.3rem}
+    .skill-tags span{
+      font-size:.75rem;
+      padding:.15rem .45rem;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.6);
+      color:var(--muted);
+    }
+
+    /* ---------------- EDUCATION / ACHIEVEMENTS ---------------- */
+    .two-col{
+      display:grid;
+      grid-template-columns: minmax(0,1.4fr) minmax(0,1fr);
+      gap:1.2rem;
+    }
+    @media(max-width:900px){.two-col{grid-template-columns:1fr}}
+    .edu-block h3{font-size:1.05rem;margin-bottom:.2rem}
+    .edu-meta{font-size:.9rem;color:var(--muted);margin-bottom:.35rem}
+    .list{font-size:.9rem;color:var(--muted);line-height:1.8;padding-left:1.1rem}
+    .list li+li{margin-top:.06rem}
+
+    /* ---------------- CONTACT ---------------- */
+    .contact-wrap{
+      display:flex;
+      gap:1.1rem;
+      flex-wrap:wrap;
+      align-items:flex-start;
+      justify-content:space-between;
+    }
+    .contact-main{flex:1;min-width:260px}
+    .contact-card{
+      flex:1;min-width:260px;
+      border-radius:16px;
+      border:1px solid rgba(148,163,184,0.5);
+      background:radial-gradient(circle at 100% 0,rgba(168,85,255,0.18),transparent 60%),
+                 rgba(15,23,42,0.94);
+      padding:1rem 1.1rem 1.2rem;
+    }
+    .note{
+      font-size:.85rem;
+      color:var(--muted);
+      margin-top:.4rem;
+      text-align:right;
+    }
+
+    /* decorative mesh */
+    .mesh{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.12;
+      z-index:0;
+    }
+    .mesh svg{width:100%;height:100%}
+    footer{
+      margin-top:2.25rem;
+      text-align:center;
+      font-size:.8rem;
+      color:var(--muted);
+      border-top:1px solid rgba(30,64,175,0.7);
+      padding-top:1.1rem;
+      opacity:.85;
+    }
+  </style>
+</head>
+<body>
+  <!-- soft mesh bg -->
+  <div class="mesh" aria-hidden="true">
+    <svg preserveAspectRatio="none" viewBox="0 0 1600 900">
+      <defs>
+        <linearGradient id="meshGrad" x1="0" x2="1">
+          <stop offset="0" stop-color="#22d3ee" stop-opacity="0.2"/>
+          <stop offset="1" stop-color="#a855ff" stop-opacity="0.2"/>
+        </linearGradient>
+      </defs>
+      <path d="M0 180 C200 140 400 240 600 180 C800 120 1000 240 1200 180 C1400 120 1600 240 1800 180"
+            stroke="url(#meshGrad)" stroke-width="2" fill="none"/>
+      <path d="M0 520 C200 460 400 560 600 520 C800 480 1000 560 1200 520 C1400 480 1600 560 1800 520"
+            stroke="url(#meshGrad)" stroke-width="2" fill="none" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <div class="logo-orbit">
+          <div class="logo-text">NM</div>
+        </div>
+        <div>
+          <div class="brand-main-title">Nitin Mishra</div>
+          <div class="brand-sub">AI/ML • NLP • Generative AI</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">B.Tech CSE (AI-ML) • VIT</div>
+          <h1>Building <span class="gradient-name">intelligent systems</span> that ship, not just simulate.</h1>
+          <p class="hero-tagline">
+            <span class="typing-role" id="typing-role">AI/ML Engineer</span><span class="caret"></span>
+          </p>
+          <p class="hero-body">
+            I’m an AI & Machine Learning engineer in training who enjoys turning research ideas into practical,
+            interactive tools — from voice-driven banking assistants to real-time network security and churn prediction apps.
+            I care about clean pipelines, reproducible experiments, and models that actually reach users.
+          </p>
+
+          <div class="hero-badges">
+            <div class="badge">Python • C++ • DSA</div>
+            <div class="badge">TensorFlow • Keras</div>
+            <div class="badge">Scikit-learn • MLflow</div>
+            <div class="badge">NLP • Hugging Face • LangChain</div>
+            <div class="badge">MySQL • MongoDB</div>
+          </div>
+
+          <div class="hero-cta">
+            <a class="btn-primary" href="#projects">View projects</a>
+            <a class="btn-primary" href="./Nitin Resume.pdf" download>Download Resume</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <div class="orbiting-dot"></div>
+          <div class="hero-panel-inner">
+            <img src="./image.png" alt="Nitin Mishra portrait" class="hero-photo" />
+            <div style="font-weight:600;font-size:1.05rem;margin-bottom:.15rem;">Nitin Mishra</div>
+            <div style="font-size:.9rem;color:var(--muted);margin-bottom:.5rem;">
+              B.Tech CSE (AI-ML) • VIT Bhopal
+            </div>
+            <div style="font-size:.85rem;color:var(--muted);line-height:1.6;">
+              AI/ML engineer in training, building practical systems — from security pipelines and churn models
+              to voice-driven assistants and interactive ML apps.
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <div class="section-kicker">End-to-end systems with real users, clean data flows, and clear metrics.</div>
+        </div>
+
+        <div class="glass">
+          <div class="projects-grid">
+
+            <!-- VAFA -->
+            <article class="project">
+              <div class="project-left">
+                <h3>VAFA — Voice-Activated Form Assistant for Banking</h3>
+                <div class="project-meta">Multilingual speech-to-structured-data pipeline for banking forms.</div>
+                <p>
+                  Designed and deployed a multilingual NLP pipeline that converts spoken Hindi/English input into structured
+                  banking form fields. DistilBERT classifies utterances into entities like <em>Name</em> or <em>Amount</em>, followed
+                  by a regex engine that extracts values such as 10-digit phone numbers or monetary amounts. Deployed with
+                  Streamlit and Web Speech API, enabling real-time usage for 500+ beta users with F1 &gt; 0.98.
+                </p>
+                <div class="project-tags">
+                  <span class="pill">Python</span>
+                  <span class="pill">Hugging Face Transformers</span>
+                  <span class="pill">Scikit-learn</span>
+                  <span class="pill">Regex</span>
+                  <span class="pill">Streamlit</span>
+                </div>
+                <a class="project-link" href="https://github.com/HumourSpeech/VAFA" target="_blank">View code ↗</a>
+              </div>
+              <div class="project-media media-vafa">
+                <div class="vafa-wave">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="vafa-mic"></div>
+              </div>
+            </article>
+
+            <!-- Network Security -->
+            <article class="project">
+              <div class="project-left">
+                <h3>Network Security System</h3>
+                <div class="project-meta">Modular ML-based security for phishing detection and anomaly monitoring.</div>
+                <p>
+                  Built an ML-driven security pipeline that flags phishing attempts and anomalies with modular components for
+                  ingestion, preprocessing, training and evaluation. Leveraged MongoDB and YAML-based configuration for
+                  reproducible experiments across 10k+ records, plus centralized logging and robust exception handling that cut
+                  debugging time by 40%. Packaged with Docker for portable, cloud-ready deployment.
+                </p>
+                <div class="project-tags">
+                  <span class="pill">Python</span>
+                  <span class="pill">TensorFlow • Keras</span>
+                  <span class="pill">Streamlit</span>
+                  <span class="pill">MongoDB</span>
+                  <span class="pill">Docker</span>
+                </div>
+                <a class="project-link" href="https://github.com/HumourSpeech/Network-Security-System" target="_blank">View code ↗</a>
+              </div>
+              <div class="project-media media-net">
+                <div class="net-grid">
+                  <div class="net-grid-lines"></div>
+                  <div class="net-pulse"></div>
+                  <div class="net-shield"></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ChurnDefender -->
+            <article class="project">
+              <div class="project-left">
+                <h3>ChurnDefender — Customer Churn Prediction App</h3>
+                <div class="project-meta">Interactive churn prediction using deep learning and real-time user inputs.</div>
+                <p>
+                  Developed a TensorFlow/Keras neural network to predict customer churn from demographics and account
+                  behaviour. Preprocessing includes label-encoded gender, one-hot encoded geography and standardized
+                  numerical features via <code>StandardScaler</code>. Integrated sliders, number fields, and dropdowns in a Streamlit
+                  UI that loads trained models and pipelines via Pickle for instant inference, achieving ~85% test accuracy.
+                </p>
+                <div class="project-tags">
+                  <span class="pill">TensorFlow • Keras</span>
+                  <span class="pill">Scikit-learn</span>
+                  <span class="pill">Streamlit</span>
+                  <span class="pill">Pickle</span>
+                </div>
+                <a class="project-link" href="https://github.com/HumourSpeech/ChurnDefender" target="_blank">View code ↗</a>
+              </div>
+              <div class="project-media media-churn">
+                <div class="churn-meter-track">
+                  <div class="churn-meter-fill"></div>
+                </div>
+                <div class="churn-prob">85%</div>
+                <div class="churn-dot"></div>
+              </div>
+            </article>
+
+            <!-- Placeholder for future project -->
+            <article class="project">
+              <div class="project-left">
+                <h3>Next up — Agentic AI Experiments</h3>
+                <div class="project-meta">Exploring tool-using agents, memory and multi-step reasoning.</div>
+                <p>
+                  Currently experimenting with agentic AI patterns — chaining LLMs with tools, vector search, and structured
+                  memory to build assistants that not only respond but also plan, execute and reflect. This space is evolving,
+                  and this slot is reserved for the next system that makes it from notebook to deployment.
+                </p>
+                <div class="project-tags">
+                  <span class="pill">LangChain</span>
+                  <span class="pill">RAG</span>
+                  <span class="pill">Agents</span>
+                </div>
+              </div>
+              <div class="project-media" style="background:radial-gradient(circle at 0 0,#22d3ee44,transparent 60%), radial-gradient(circle at 100% 100%,#a855ff44,transparent 60%),#020617;position:relative;">
+                <div style="position:absolute;inset:22%;border-radius:50%;border:1px dashed rgba(148,163,184,0.7);"></div>
+                <div style="position:absolute;inset:32%;border-radius:50%;border:1px solid rgba(34,211,238,0.9);box-shadow:0 0 16px rgba(34,211,238,0.8);"></div>
+                <div style="position:absolute;inset:40%;display:flex;align-items:center;justify-content:center;font-size:11px;text-align:center;color:#e5edff;">soon™</div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <div class="section-head">
+          <h2>Skills & Tools</h2>
+          <div class="section-kicker">From classical ML to deep learning, NLP and production plumbing.</div>
+        </div>
+
+        <div class="glass">
+          <div class="skills-grid">
+            <div class="skill">
+              <h3>Languages & DSA</h3>
+              <div class="skill-desc">Writing efficient, contest-tested code with an eye on complexity.</div>
+              <div class="meter"><div class="meter-inner" style="width:88%"></div></div>
+              <div class="skill-tags" style="margin-top:.5rem;">
+                <span>C++</span><span>Python</span><span>DSA</span><span>Competitive Programming</span>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>Machine & Deep Learning</h3>
+              <div class="skill-desc">End-to-end ML: data prep, model selection, evaluation and iteration.</div>
+              <div class="meter"><div class="meter-inner" style="width:82%"></div></div>
+              <div class="skill-tags">
+                <span>Scikit-learn</span><span>TensorFlow</span><span>Keras</span><span>MLflow</span>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>NLP & Generative AI</h3>
+              <div class="skill-desc">Transformers, embeddings and structured extraction from messy text.</div>
+              <div class="meter"><div class="meter-inner" style="width:80%"></div></div>
+              <div class="skill-tags">
+                <span>Hugging Face</span><span>Transformers</span><span>LangChain</span><span>Regex</span>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>Data & Visualization</h3>
+              <div class="skill-desc">Clean, inspect, and visualize data to guide modelling decisions.</div>
+              <div class="meter"><div class="meter-inner" style="width:76%"></div></div>
+              <div class="skill-tags">
+                <span>Pandas</span><span>NumPy</span><span>Matplotlib</span>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>Databases & Backends</h3>
+              <div class="skill-desc">Storing and serving ML data and predictions reliably.</div>
+              <div class="meter"><div class="meter-inner" style="width:72%"></div></div>
+              <div class="skill-tags">
+                <span>MySQL</span><span>MongoDB</span><span>YAML configs</span>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>DevOps & Deployment</h3>
+              <div class="skill-desc">Packaging experiments into shareable apps and services.</div>
+              <div class="meter"><div class="meter-inner" style="width:68%"></div></div>
+              <div class="skill-tags">
+                <span>Streamlit</span><span>Docker</span><span>Cloud-ready pipelines</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION & ACHIEVEMENTS -->
+      <section id="education">
+        <div class="section-head">
+          <h2>Education & Highlights</h2>
+          <div class="section-kicker">Formal foundations plus a lot of self-driven exploration.</div>
+        </div>
+
+        <div class="glass">
+          <div class="two-col">
+            <div class="edu-block">
+              <h3>Vellore Institute of Technology</h3>
+              <div class="edu-meta">B.Tech in Computer Science Engineering (AI-ML) • 2022–2026</div>
+              <div class="edu-meta">CGPA: 8.30</div>
+
+              <h3 style="margin-top:1rem;">Sainik School Bhubaneswar</h3>
+              <div class="edu-meta">12th Standard • 2022 • 75%</div>
+              <div class="edu-meta">10th Standard • 2020 • 82%</div>
+
+              <h3 style="margin-top:1.2rem;">Certifications</h3>
+              <ul class="list">
+                <li>Complete Data Science, ML, NLP and DL Bootcamp — Udemy</li>
+                <li>Privacy and Security in Online Social Media — NPTEL</li>
+                <li>Five-day AI-ML Bootcamp — CINE-VAC CDAC</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Achievements</h3>
+              <ul class="list">
+                <li>Silver + Elite certificate in NPTEL PSOSM exam.</li>
+                <li>Completed a 160-day coding challenge on GeeksForGeeks.</li>
+                <li>Active Codeforces programmer (rating 600+), practicing algorithms regularly.</li>
+              </ul>
+
+              <h3 style="margin-top:1.2rem;">Beyond the keyboard</h3>
+              <ul class="list">
+                <li>Commanded the Republic Day Parade, leading 100+ participants — strong leadership & discipline.</li>
+                <li>Chess enthusiast — 1150+ rapid rating on Chess.com and 1350+ blitz on Lichess.</li>
+                <li>Part of the All India Sainik School Central Zone Football Championship team (1st Zone, 3rd InterZone).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="section-head">
+          <h2>Get in touch</h2>
+          <div class="section-kicker">Open to internships, collaborations, and interesting problem statements.</div>
+        </div>
+
+        <div class="glass">
+          <div class="contact-wrap">
+            <div class="contact-main">
+              <p style="font-size:.95rem;color:var(--muted);text-align:justify;">
+                If you’re exploring AI/ML projects — whether it’s a research prototype, internal tool or customer-facing app —
+                I’d love to help design the data pipeline, build the model, or put together a quick interactive demo.
+              </p>
+              <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:.6rem;">
+                <a class="btn-primary" href="mailto:mishranitin6076@gmail.com">Email Nitin</a>
+                <a class="btn-primary" href="https://www.linkedin.com/in/nitinmishra76" target="_blank">Connect on LinkedIn</a>
+                <a class="btn-primary" href="https://github.com/HumourSpeech" target="_blank">GitHub profile</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div style="margin-top:.4rem;text-align:left;">
+                <div style="font-weight:700;">Nitin Kumar Mishra</div>
+                <div style="font-size:.9rem;color:var(--muted);">+91-87971-24489</div>
+                <div style="font-size:.9rem;color:var(--muted);margin-top:.15rem;">mishranitin6076@gmail.com</div>
+              </div>
+              <div>
+                Have feedback or an idea? Drop a short message — I’m always up for refining systems and discussing new ML use-cases.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Crafted with curiosity • AI-ML @ VIT Bhopal • © Nitin Mishra
+    </footer>
+  </div>
+
+  <script>
+    // typing role rotator
+    (function(){
+      const roles = [
+        "AI/ML Engineer",
+        "NLP & Generative AI Enthusiast",
+        "Streamlit App Builder",
+        "Competitive Programmer (C++)"
+      ];
+      let i = 0;
+      const el = document.getElementById("typing-role");
+      function rotate(){
+        el.textContent = roles[i % roles.length];
+        i++;
+      }
+      rotate();
+      setInterval(rotate, 2600);
+    })();
+  </script>
+</body>
+</html>
